@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="SBT: org.infinispan:infinispan-commons:6.0.2.Final">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.infinispan/infinispan-commons/bundles/infinispan-commons-6.0.2.Final.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

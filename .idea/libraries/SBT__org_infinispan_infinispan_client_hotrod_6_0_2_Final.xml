@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="SBT: org.infinispan:infinispan-client-hotrod:6.0.2.Final">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.infinispan/infinispan-client-hotrod/bundles/infinispan-client-hotrod-6.0.2.Final.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

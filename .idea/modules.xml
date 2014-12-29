@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ghostclient.iml" filepath="$PROJECT_DIR$/.idea/modules/ghostclient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ghostclient-build.iml" filepath="$PROJECT_DIR$/.idea/modules/ghostclient-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nettytest-build.iml" filepath="$PROJECT_DIR$/.idea/modules/nettytest-build.iml" />
+    </modules>
+  </component>
+</project>
+
