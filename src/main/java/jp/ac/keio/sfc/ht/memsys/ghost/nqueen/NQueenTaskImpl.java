@@ -9,6 +9,7 @@ import jp.ac.keio.sfc.ht.memsys.ghost.commonlib.tasks.OffloadableTask;
  */
 public class NQueenTaskImpl implements OffloadableTask {
     private static final String TASK_NAME = "NQUEEN";
+    private static int counter = 0;
 
     /***********************************************************************
      * Return true if queen placement q[n] does not conflict with
@@ -47,13 +48,13 @@ public class NQueenTaskImpl implements OffloadableTask {
         int N = (Integer)offloadableData.getData("nqueen_data");
         int[] a = new int[N];
         enumerate(a, 0);
-
-        return null;
+        OffloadableData result = new OffloadableData("result_data", String.valueOf(counter));
+        return result;
     }
 
     public static void enumerate(int[] q, int n) {
         int N = q.length;
-        if (n == N) /*printQueens(q)*/;
+        if (n == N) counter++;
         else {
             for (int i = 0; i < N; i++) {
                 q[n] = i;

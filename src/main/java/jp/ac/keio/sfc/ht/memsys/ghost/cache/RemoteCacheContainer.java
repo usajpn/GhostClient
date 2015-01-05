@@ -22,8 +22,8 @@ public class RemoteCacheContainer {
 
     private RemoteCacheContainer(){
         try {
-            CACHE_MANAGER = new RemoteCacheManager(new ConfigurationBuilder().addServers("localhost").build());
-            //CACHE_MANAGER = new RemoteCacheManager(new ConfigurationBuilder().addServers("133.27.171.58").build());
+//            CACHE_MANAGER = new RemoteCacheManager(new ConfigurationBuilder().addServers("localhost").build());
+            CACHE_MANAGER = new RemoteCacheManager(new ConfigurationBuilder().addServers("133.27.171.11").build());
         } catch (Exception e) {
             throw new RuntimeException("Unable to configure Infinispan", e);
         }

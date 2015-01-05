@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="ghostclient"
+		module="ghostclient_2.10"
+		revision="1.0"
+		conf="compile-internal"
+		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
+		date="20150105103752"/>
+	<dependencies>
+		<module organisation="io.netty" name="netty-all">
+			<revision name="4.0.4.Final" status="release" pubdate="20130723084829" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="12">
+				<metadata-artifact status="no" details="" size="11902" time="0" location="/Users/usa/.ivy2/cache/io.netty/netty-all/ivy-4.0.4.Final.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/io/netty/netty-all/4.0.4.Final/netty-all-4.0.4.Final.pom"/>
+				<caller organisation="ghostclient" name="ghostclient_2.10" conf="optional, compile, provided, compile-internal" rev="4.0.4.Final" rev-constraint-default="4.0.4.Final" rev-constraint-dynamic="4.0.4.Final" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="netty-all" type="jar" ext="jar" status="no" details="" size="1426508" time="0" location="/Users/usa/.ivy2/cache/io.netty/netty-all/jars/netty-all-4.0.4.Final.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/io/netty/netty-all/4.0.4.Final/netty-all-4.0.4.Final.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.infinispan" name="infinispan-client-hotrod">
+			<revision name="6.0.2.Final" status="release" pubdate="20140317185947" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="2">
+				<metadata-artifact status="no" details="" size="44765" time="0" location="/Users/usa/.ivy2/cache/org.infinispan/infinispan-client-hotrod/ivy-6.0.2.Final.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/infinispan/infinispan-client-hotrod/6.0.2.Final/infinispan-client-hotrod-6.0.2.Final.pom"/>
+				<caller organisation="ghostclient" name="ghostclient_2.10" conf="optional, compile, provided, compile-internal" rev="6.0.2.Final" rev-constraint-default="6.0.2.Final" rev-constraint-dynamic="6.0.2.Final" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="infinispan-client-hotrod" type="bundle" ext="jar" status="no" details="" size="187140" time="0" location="/Users/usa/.ivy2/cache/org.infinispan/infinispan-client-hotrod/bundles/infinispan-client-hotrod-6.0.2.Final.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/infinispan/infinispan-client-hotrod/6.0.2.Final/infinispan-client-hotrod-6.0.2.Final.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.infinispan" name="infinispan-core">
+			<revision name="6.0.2.Final" status="release" pubdate="20140317185301" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="5">
+				<metadata-artifact status="no" details="" size="59102" time="0" location="/Users/usa/.ivy2/cache/org.infinispan/infinispan-core/ivy-6.0.2.Final.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/infinispan/infinispan-core/6.0.2.Final/infinispan-core-6.0.2.Final.pom"/>
+				<caller organisation="ghostclient" name="ghostclient_2.10" conf="optional, compile, provided, compile-internal" rev="6.0.2.Final" rev-constraint-default="6.0.2.Final" rev-constraint-dynamic="6.0.2.Final" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="infinispan-core" type="bundle" ext="jar" status="no" details="" size="2016491" time="0" location="/Users/usa/.ivy2/cache/org.infinispan/infinispan-core/bundles/infinispan-core-6.0.2.Final.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/infinispan/infinispan-core/6.0.2.Final/infinispan-core-6.0.2.Final.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.jboss.spec.javax.transaction" name="jboss-transaction-api_1.1_spec">
+			<revision name="1.0.1.Final" status="release" pubdate="20120318014951" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="7">
+				<license name="Common Development and Distribution License" url="http://repository.jboss.org/licenses/cddl.txt"/>
+				<license name="GNU General Public License, Version 2 with the Classpath Exception" url="http://repository.jboss.org/licenses/gpl-2.0-ce.txt"/>
+				<metadata-artifact status="no" details="" size="7849" time="0" location="/Users/usa/.ivy2/cache/org.jboss.spec.javax.transaction/jboss-transaction-api_1.1_spec/ivy-1.0.1.Final.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/jboss/spec/javax/transaction/jboss-transaction-api_1.1_spec/1.0.1.Final/jboss-transaction-api_1.1_spec-1.0.1.Final.pom"/>
+				<caller organisation="ghostclient" name="ghostclient_2.10" conf="optional, compile, provided, compile-internal" rev="1.0.1.Final" rev-constraint-default="1.0.1.Final" rev-constraint-dynamic="1.0.1.Final" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="jboss-transaction-api_1.1_spec" type="jar" ext="jar" status="no" details="" size="25215" time="0" location="/Users/usa/.ivy2/cache/org.jboss.spec.javax.transaction/jboss-transaction-api_1.1_spec/jars/jboss-transaction-api_1.1_spec-1.0.1.Final.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/jboss/spec/javax/transaction/jboss-transaction-api_1.1_spec/1.0.1.Final/jboss-transaction-api_1.1_spec-1.0.1.Final.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.jgroups" name="jgroups">
+			<revision name="3.4.1.Final" status="release" pubdate="20131111185404" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.jgroups.org" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="6">
+				<license name="Apache License 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
+				<metadata-artifact status="no" details="" size="3416" time="0" location="/Users/usa/.ivy2/cache/org.jgroups/jgroups/ivy-3.4.1.Final.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/jgroups/jgroups/3.4.1.Final/jgroups-3.4.1.Final.pom"/>
+				<caller organisation="ghostclient" name="ghostclient_2.10" conf="optional, compile, provided, compile-internal" rev="3.4.1.Final" rev-constraint-default="3.4.1.Final" rev-constraint-dynamic="3.4.1.Final" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="jgroups" type="bundle" ext="jar" status="no" details="" size="2111915" time="0" location="/Users/usa/.ivy2/cache/org.jgroups/jgroups/bundles/jgroups-3.4.1.Final.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/jgroups/jgroups/3.4.1.Final/jgroups-3.4.1.Final.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="commons-pool" name="commons-pool">
+			<revision name="1.6" status="release" pubdate="20120110003305" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://commons.apache.org/pool/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="4">
+				<metadata-artifact status="no" details="" size="7362" time="0" location="/Users/usa/.ivy2/cache/commons-pool/commons-pool/ivy-1.6.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/commons-pool/commons-pool/1.6/commons-pool-1.6.pom"/>
+				<caller organisation="org.infinispan" name="infinispan-client-hotrod" conf="default, compile, runtime, master" rev="1.6" rev-constraint-default="1.6" rev-constraint-dynamic="1.6" callerrev="6.0.2.Final"/>
+				<artifacts>
+					<artifact name="commons-pool" type="jar" ext="jar" status="no" details="" size="111119" time="0" location="/Users/usa/.ivy2/cache/commons-pool/commons-pool/jars/commons-pool-1.6.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/commons-pool/commons-pool/1.6/commons-pool-1.6.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.infinispan" name="infinispan-commons">
+			<revision name="6.0.2.Final" status="release" pubdate="20140317185057" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="3">
+				<metadata-artifact status="no" details="" size="58031" time="0" location="/Users/usa/.ivy2/cache/org.infinispan/infinispan-commons/ivy-6.0.2.Final.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/infinispan/infinispan-commons/6.0.2.Final/infinispan-commons-6.0.2.Final.pom"/>
+				<caller organisation="org.infinispan" name="infinispan-client-hotrod" conf="default, compile, runtime, master" rev="6.0.2.Final" rev-constraint-default="6.0.2.Final" rev-constraint-dynamic="6.0.2.Final" callerrev="6.0.2.Final"/>
+				<caller organisation="org.infinispan" name="infinispan-core" conf="default, compile, runtime, master" rev="6.0.2.Final" rev-constraint-default="6.0.2.Final" rev-constraint-dynamic="6.0.2.Final" callerrev="6.0.2.Final"/>
+				<artifacts>
+					<artifact name="infinispan-commons" type="bundle" ext="jar" status="no" details="" size="460526" time="0" location="/Users/usa/.ivy2/cache/org.infinispan/infinispan-commons/bundles/infinispan-commons-6.0.2.Final.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/infinispan/infinispan-commons/6.0.2.Final/infinispan-commons-6.0.2.Final.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="net.jcip" name="jcip-annotations">
+			<revision name="1.0" status="release" pubdate="20080814154805" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://jcip.net/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="11">
+				<metadata-artifact status="no" details="" size="2215" time="0" location="/Users/usa/.ivy2/cache/net.jcip/jcip-annotations/ivy-1.0.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/net/jcip/jcip-annotations/1.0/jcip-annotations-1.0.pom"/>
+				<caller organisation="ghostclient" name="ghostclient_2.10" conf="optional, compile, provided, compile-internal" rev="1.0" rev-constraint-default="1.0" rev-constraint-dynamic="1.0" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="jcip-annotations" type="jar" ext="jar" status="no" details="" size="2254" time="0" location="/Users/usa/.ivy2/cache/net.jcip/jcip-annotations/jars/jcip-annotations-1.0.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/net/jcip/jcip-annotations/1.0/jcip-annotations-1.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.jboss.marshalling" name="jboss-marshalling-river">
+			<revision name="1.4.4.Final" status="release" pubdate="20140306043341" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="8">
+				<metadata-artifact status="no" details="" size="10144" time="0" location="/Users/usa/.ivy2/cache/org.jboss.marshalling/jboss-marshalling-river/ivy-1.4.4.Final.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/jboss/marshalling/jboss-marshalling-river/1.4.4.Final/jboss-marshalling-river-1.4.4.Final.pom"/>
+				<caller organisation="ghostclient" name="ghostclient_2.10" conf="optional, compile, provided, compile-internal" rev="1.4.4.Final" rev-constraint-default="1.4.4.Final" rev-constraint-dynamic="1.4.4.Final" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="jboss-marshalling-river" type="jar" ext="jar" status="no" details="" size="81922" time="0" location="/Users/usa/.ivy2/cache/org.jboss.marshalling/jboss-marshalling-river/jars/jboss-marshalling-river-1.4.4.Final.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/jboss/marshalling/jboss-marshalling-river/1.4.4.Final/jboss-marshalling-river-1.4.4.Final.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.jboss.marshalling" name="jboss-marshalling">
+			<revision name="1.4.4.Final" status="release" pubdate="20140306043325" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, master(*), runtime, compile(*), runtime(*), master" position="9">
+				<metadata-artifact status="no" details="" size="10301" time="0" location="/Users/usa/.ivy2/cache/org.jboss.marshalling/jboss-marshalling/ivy-1.4.4.Final.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/jboss/marshalling/jboss-marshalling/1.4.4.Final/jboss-marshalling-1.4.4.Final.pom"/>
+				<caller organisation="ghostclient" name="ghostclient_2.10" conf="optional, compile, provided, compile-internal" rev="1.4.4.Final" rev-constraint-default="1.4.4.Final" rev-constraint-dynamic="1.4.4.Final" callerrev="1.0"/>
+				<caller organisation="org.jboss.marshalling" name="jboss-marshalling-river" conf="default, compile, runtime, master" rev="1.4.4.Final" rev-constraint-default="1.4.4.Final" rev-constraint-dynamic="1.4.4.Final" callerrev="1.4.4.Final"/>
+				<artifacts>
+					<artifact name="jboss-marshalling" type="jar" ext="jar" status="no" details="" size="216066" time="0" location="/Users/usa/.ivy2/cache/org.jboss.marshalling/jboss-marshalling/jars/jboss-marshalling-1.4.4.Final.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/jboss/marshalling/jboss-marshalling/1.4.4.Final/jboss-marshalling-1.4.4.Final.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.jboss.logging" name="jboss-logging">
+			<revision name="3.1.2.GA" status="release" pubdate="20120728021236" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.jboss.org" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="10">
+				<license name="Apache License, version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="8294" time="0" location="/Users/usa/.ivy2/cache/org.jboss.logging/jboss-logging/ivy-3.1.2.GA.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/jboss/logging/jboss-logging/3.1.2.GA/jboss-logging-3.1.2.GA.pom"/>
+				<caller organisation="ghostclient" name="ghostclient_2.10" conf="optional, compile, provided, compile-internal" rev="3.1.2.GA" rev-constraint-default="3.1.2.GA" rev-constraint-dynamic="3.1.2.GA" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="jboss-logging" type="jar" ext="jar" status="no" details="" size="55248" time="0" location="/Users/usa/.ivy2/cache/org.jboss.logging/jboss-logging/jars/jboss-logging-3.1.2.GA.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/jboss/logging/jboss-logging/3.1.2.GA/jboss-logging-3.1.2.GA.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="GhostCommonLib" name="GhostCommonLib">
+			<revision name="0.28-BETA" status="release" pubdate="20141221161501" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="1">
+				<metadata-artifact status="no" details="" size="2297" time="0" location="/Users/usa/.ivy2/cache/GhostCommonLib/GhostCommonLib/ivy-0.28-BETA.xml" searched="false" origin-is-local="false" origin-location="http://usajpn.github.io/GhostCommonLib-mvn-repo/GhostCommonLib/GhostCommonLib/0.28-BETA/GhostCommonLib-0.28-BETA.pom"/>
+				<caller organisation="ghostclient" name="ghostclient_2.10" conf="optional, compile, provided, compile-internal" rev="0.28-BETA" rev-constraint-default="0.28-BETA" rev-constraint-dynamic="0.28-BETA" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="GhostCommonLib" type="jar" ext="jar" status="no" details="" size="11706" time="0" location="/Users/usa/.ivy2/cache/GhostCommonLib/GhostCommonLib/jars/GhostCommonLib-0.28-BETA.jar">
+						<origin-location is-local="false" location="http://usajpn.github.io/GhostCommonLib-mvn-repo/GhostCommonLib/GhostCommonLib/0.28-BETA/GhostCommonLib-0.28-BETA.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang" name="scala-library">
+			<revision name="2.10.4" status="release" pubdate="20140319064629" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.10.4/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="0">
+				<license name="BSD-like" url="http://www.scala-lang.org/downloads/license.html          "/>
+				<metadata-artifact status="no" details="" size="2487" time="0" location="/Users/usa/.ivy2/cache/org.scala-lang/scala-library/ivy-2.10.4.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scala-lang/scala-library/2.10.4/scala-library-2.10.4.pom"/>
+				<caller organisation="ghostclient" name="ghostclient_2.10" conf="optional, compile, provided, compile-internal" rev="2.10.4" rev-constraint-default="2.10.4" rev-constraint-dynamic="2.10.4" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="scala-library" type="jar" ext="jar" status="no" details="" size="7126372" time="0" location="/Users/usa/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.10.4.jar">
+						<origin-location is-local="false" location="UNKNOWN"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>

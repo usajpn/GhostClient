@@ -16,6 +16,7 @@ package jp.ac.keio.sfc.ht.memsys.ghost.client;/*
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
+import jp.ac.keio.sfc.ht.memsys.ghost.cache.RemoteCacheContainer;
 import jp.ac.keio.sfc.ht.memsys.ghost.nqueen.NQueenTaskImpl;
 import jp.ac.keio.sfc.ht.memsys.ghost.nqueen.NQueenUtil;
 import jp.ac.keio.sfc.ht.memsys.ghost.commonlib.data.OffloadableData;
@@ -42,13 +43,17 @@ public class ObjectEchoClientHandler extends ChannelInboundHandlerAdapter {
     private String appId;
     private String taskId;
     private final String taskName = "NQUEEN";
+    private String num = "";
+    private long start;
+    private long end;
 
     /**
      * Creates a client-side handler.
      */
-    public ObjectEchoClientHandler() {
+    public ObjectEchoClientHandler(String n) {
+        this.num = n;
         Bundle bundle = new Bundle();
-        bundle.putData(BundleKeys.APP_NAME, "NQUEENAPP");
+        bundle.putData(BundleKeys.APP_NAME, "NQUEENAPP" + this.num);
         mes = new GhostRequest(GhostRequestTypes.INIT, bundle);
     }
 
@@ -58,6 +63,7 @@ public class ObjectEchoClientHandler extends ChannelInboundHandlerAdapter {
 //        ctx.writeAndFlush(firstMessage);
         //INIT APP
 //        ctx.writeAndFlush(mes);
+        start = System.currentTimeMillis();
         ctx.writeAndFlush(mes);
     }
 
@@ -67,14 +73,13 @@ public class ObjectEchoClientHandler extends ChannelInboundHandlerAdapter {
 //        System.out.println(m);
         GhostResponse in = (GhostResponse) msg;
         GhostRequest req = null;
-        System.out.println("HOGEHOGE");
         if (in.STATUS.equals(GhostResponseTypes.SUCCESS)) {
             if (in.REQUESTID.equals(GhostRequestTypes.INIT)) {
                 // save appid and taskid
                 appId = in.MESSAGE.getData(BundleKeys.APP_ID);
                 taskId = Util.taskPathBuilder(appId, taskName);
-                System.out.println("App ID:" + appId);
-                System.out.println("Task ID:" + taskId);
+//                System.out.println("App ID:" + appId);
+//                System.out.println("Task ID:" + taskId);
 
                 OffloadableTask task = new NQueenTaskImpl();
                 // Cache Task
@@ -88,8 +93,8 @@ public class ObjectEchoClientHandler extends ChannelInboundHandlerAdapter {
 
             } else if (in.REQUESTID.equals(GhostRequestTypes.REGISTERTASK)) {
                 // Cache Data
-                String seq = "0";
-                int num = 8;
+                String seq = this.num;
+                int num = 10;
                 OffloadableData data = NQueenUtil.genData(taskId, seq, num);
                 String path = Util.dataPathBuilder(taskId, seq);
                 mDataCache.put(path, data);
@@ -103,6 +108,11 @@ public class ObjectEchoClientHandler extends ChannelInboundHandlerAdapter {
                 req = new GhostRequest(GhostRequestTypes.EXECUTE, bundle);
             } else if (in.REQUESTID.equals(GhostRequestTypes.EXECUTE)) {
                 // TODO if SUCCESS
+                OffloadableData resultData = mResultCache.get(Util.dataPathBuilder(taskId, this.num));
+                System.out.println(resultData.getData("result_data"));
+                end = System.currentTimeMillis();
+                System.out.println(this.num + " " + (end - start));
+                ctx.close();
 
             } else {
                 // do nothing
@@ -111,7 +121,11 @@ public class ObjectEchoClientHandler extends ChannelInboundHandlerAdapter {
         else {
             System.out.println("SOME KIND OF FAILURE...: " + in.STATUS);
         }
-        ctx.write(req);
+
+        // send request
+        if (req != null) {
+            ctx.write(req);
+        }
     }
 
     @Override

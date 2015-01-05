@@ -24,25 +24,27 @@ import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.handler.codec.serialization.ClassResolvers;
 import io.netty.handler.codec.serialization.ObjectDecoder;
 import io.netty.handler.codec.serialization.ObjectEncoder;
-//import io.netty.handler.ssl.SslContext;
-//import io.netty.handler.ssl.util.InsecureTrustManagerFactory;
 
-public final class ObjectEchoClient {
+public final class ObjectEchoClient implements Runnable {
 
-//    static final boolean SSL = System.getProperty("ssl") != null;
-    static final String HOST = System.getProperty("host", "127.0.0.1");
+//    static final String HOST = System.getProperty("host", "127.0.0.1");
+    static final String HOST = System.getProperty("host", "133.27.171.12");
     static final int PORT = Integer.parseInt(System.getProperty("port", "2555"));
     static final int SIZE = Integer.parseInt(System.getProperty("size", "256"));
+    private String num = "";
+
+    public ObjectEchoClient(String n) {
+        this.num = n;
+    }
 
     public static void main(String[] args) throws Exception {
-        // Configure SSL.
-//        final SslContext sslCtx;
-//        if (SSL) {
-//            sslCtx = SslContext.newClientContext(InsecureTrustManagerFactory.INSTANCE);
-//        } else {
-//            sslCtx = null;
-//        }
+        for (int i=0; i<1000; i++) {
+            Thread t = new Thread(new ObjectEchoClient(String.valueOf(i)));
+            t.start();
+        }
+    }
 
+    public void run() {
         EventLoopGroup group = new NioEventLoopGroup();
         try {
             Bootstrap b = new Bootstrap();
@@ -52,19 +54,17 @@ public final class ObjectEchoClient {
                         @Override
                         public void initChannel(SocketChannel ch) throws Exception {
                             ChannelPipeline p = ch.pipeline();
-//                            if (sslCtx != null) {
-//                                p.addLast(sslCtx.newHandler(ch.alloc(), HOST, PORT));
-//                            }
                             p.addLast(
                                     new ObjectEncoder(),
                                     new ObjectDecoder(ClassResolvers.cacheDisabled(null)),
-//                                    new ObjectDecoder(ClassResolvers.weakCachingResolver(jp.ac.keio.sfc.ht.memsys.ghost.nqueen.NQueenTaskImpl.class.getClassLoader())),
-                                    new ObjectEchoClientHandler());
+                                    new ObjectEchoClientHandler(num));
                         }
                     });
 
             // Start the connection attempt.
             b.connect(HOST, PORT).sync().channel().closeFuture().sync();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         } finally {
             group.shutdownGracefully();
         }

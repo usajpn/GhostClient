@@ -1,4 +1,4 @@
-name := "NettyTest"
+name := "GhostClient"
 
 version := "1.0"
 
