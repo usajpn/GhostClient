@@ -51,6 +51,7 @@ public final class ObjectEchoClient implements Runnable {
         for (int i=0; i<clientNum; i++) {
             Thread t = new Thread(new ObjectEchoClient(String.valueOf(i), queenNum));
             t.start();
+            Thread.sleep(10);
         }
     }
 

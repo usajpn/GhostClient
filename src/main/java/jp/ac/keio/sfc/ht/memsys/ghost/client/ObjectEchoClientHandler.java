@@ -94,7 +94,6 @@ public class ObjectEchoClientHandler extends ChannelInboundHandlerAdapter {
                 req = new GhostRequest(GhostRequestTypes.REGISTERTASK, bundle);
 
             } else if (in.REQUESTID.equals(GhostRequestTypes.REGISTERTASK)) {
-                System.out.println("HOGEHOGE");
                 // Cache Data
                 String seq = this.num;
                 OffloadableData data = NQueenUtil.genData(taskId, seq, this.queenNum);
