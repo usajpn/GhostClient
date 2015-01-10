@@ -40,18 +40,19 @@ public final class ObjectEchoClient implements Runnable {
     }
 
     public static void main(String[] args) throws Exception {
-        if (args.length != 2) {
-            System.out.println("Usage: java -jar EXECUTABLE [queenNum] [clientNum]");
+        if (args.length != 3) {
+            System.out.println("Usage: java -jar EXECUTABLE [queenNum] [clientNum] [sleepTime]");
             System.exit(0);
         }
 
         int queenNum = Integer.parseInt(args[0]);
         int clientNum = Integer.parseInt(args[1]);
+        int sleepTime = Integer.parseInt(args[2]);
 
         for (int i=0; i<clientNum; i++) {
             Thread t = new Thread(new ObjectEchoClient(String.valueOf(i), queenNum));
             t.start();
-            Thread.sleep(10);
+            Thread.sleep(sleepTime);
         }
     }
 
