@@ -44,14 +44,16 @@ public class ObjectEchoClientHandler extends ChannelInboundHandlerAdapter {
     private String taskId;
     private final String taskName = "NQUEEN";
     private String num = "";
+    private int queenNum = 0;
     private long start;
     private long end;
 
     /**
      * Creates a client-side handler.
      */
-    public ObjectEchoClientHandler(String n) {
+    public ObjectEchoClientHandler(String n, int qn) {
         this.num = n;
+        this.queenNum = qn;
         Bundle bundle = new Bundle();
         bundle.putData(BundleKeys.APP_NAME, "NQUEENAPP" + this.num);
         mes = new GhostRequest(GhostRequestTypes.INIT, bundle);
@@ -68,7 +70,7 @@ public class ObjectEchoClientHandler extends ChannelInboundHandlerAdapter {
     }
 
     @Override
-    public void channelRead(ChannelHandlerContext ctx, Object msg) {
+    public void channelRead(ChannelHandlerContext ctx, Object msg) throws InterruptedException {
         // Echo back the received object to the server.
 //        System.out.println(m);
         GhostResponse in = (GhostResponse) msg;
@@ -92,10 +94,10 @@ public class ObjectEchoClientHandler extends ChannelInboundHandlerAdapter {
                 req = new GhostRequest(GhostRequestTypes.REGISTERTASK, bundle);
 
             } else if (in.REQUESTID.equals(GhostRequestTypes.REGISTERTASK)) {
+                System.out.println("HOGEHOGE");
                 // Cache Data
                 String seq = this.num;
-                int num = 10;
-                OffloadableData data = NQueenUtil.genData(taskId, seq, num);
+                OffloadableData data = NQueenUtil.genData(taskId, seq, this.queenNum);
                 String path = Util.dataPathBuilder(taskId, seq);
                 mDataCache.put(path, data);
 
@@ -109,7 +111,7 @@ public class ObjectEchoClientHandler extends ChannelInboundHandlerAdapter {
             } else if (in.REQUESTID.equals(GhostRequestTypes.EXECUTE)) {
                 // TODO if SUCCESS
                 OffloadableData resultData = mResultCache.get(Util.dataPathBuilder(taskId, this.num));
-                System.out.println(resultData.getData("result_data"));
+//                System.out.println(resultData.getData("result_data"));
                 end = System.currentTimeMillis();
                 System.out.println(this.num + " " + (end - start));
                 ctx.close();

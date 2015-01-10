@@ -1,0 +1,21 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="ghostclient:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/ghostclient_jar</output-path>
+    <root id="archive" name="ghostclient.jar">
+      <element id="module-output" name="ghostclient" />
+      <element id="extracted-dir" path="$USER_HOME$/.ivy2/cache/commons-pool/commons-pool/jars/commons-pool-1.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.ivy2/cache/org.jboss.logging/jboss-logging/jars/jboss-logging-3.1.2.GA.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.ivy2/cache/org.infinispan/infinispan-core/bundles/infinispan-core-6.0.2.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.ivy2/cache/net.jcip/jcip-annotations/jars/jcip-annotations-1.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.ivy2/cache/org.jboss.marshalling/jboss-marshalling/jars/jboss-marshalling-1.4.4.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.sbt/boot/scala-2.10.4/lib/scala-library.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.ivy2/cache/GhostCommonLib/GhostCommonLib/jars/GhostCommonLib-0.28-BETA.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.ivy2/cache/org.infinispan/infinispan-commons/bundles/infinispan-commons-6.0.2.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.ivy2/cache/io.netty/netty-all/jars/netty-all-4.0.4.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.ivy2/cache/org.jgroups/jgroups/bundles/jgroups-3.4.1.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.ivy2/cache/org.jboss.marshalling/jboss-marshalling-river/jars/jboss-marshalling-river-1.4.4.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.ivy2/cache/org.jboss.spec.javax.transaction/jboss-transaction-api_1.1_spec/jars/jboss-transaction-api_1.1_spec-1.0.1.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.ivy2/cache/org.infinispan/infinispan-client-hotrod/bundles/infinispan-client-hotrod-6.0.2.Final.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_nettytest-build" default="compile.module.nettytest-build">
+  <dirname property="module.nettytest-build.basedir" file="${ant.file.module_nettytest-build}"/>
+  
+  <property name="module.jdk.home.nettytest-build" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.nettytest-build" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.nettytest-build" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.nettytest-build" value="-encoding UTF-8 -source 1.6 ${compiler.args}"/>
+  
+  <property name="nettytest-build.output.dir" value="${module.nettytest-build.basedir}/../../project/target/idea-classes"/>
+  <property name="nettytest-build.testoutput.dir" value="${module.nettytest-build.basedir}/../../project/target/idea-test-classes"/>
+  
+  <path id="nettytest-build.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="nettytest-build.module.production.classpath">
+    <path refid="${module.jdk.classpath.nettytest-build}"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/lib/jansi.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/lib/jline.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/lib/scala-compiler.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/lib/scala-library.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/lib/scala-reflect.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/actions-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/api-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/apply-macro-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/cache-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/classfile-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/classpath-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/collections-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/command-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/compile-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/compiler-integration-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/compiler-ivy-integration-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/completion-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/control-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/cross-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/incremental-compiler-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/io-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/ivy-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/ivy-2.3.0.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/jline-2.11.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/jsch-0.1.46.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/launcher-interface-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/logging-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/logic-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/main-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/main-settings-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/persist-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/process-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/relation-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/run-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/sbinary_2.10-0.4.2.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/sbt-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/scala-reflect-2.10.4.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/task-system-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/tasks-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/test-agent-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/test-interface-1.0.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/testing-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/tracking-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/xsbti/interface-0.13.5.jar"/>
+  </path>
+  
+  <path id="nettytest-build.runtime.production.module.classpath">
+    <pathelement location="${nettytest-build.output.dir}"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/lib/jansi.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/lib/jline.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/lib/scala-compiler.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/lib/scala-library.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/lib/scala-reflect.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/actions-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/api-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/apply-macro-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/cache-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/classfile-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/classpath-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/collections-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/command-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/compile-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/compiler-integration-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/compiler-ivy-integration-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/completion-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/control-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/cross-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/incremental-compiler-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/io-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/ivy-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/ivy-2.3.0.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/jline-2.11.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/jsch-0.1.46.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/launcher-interface-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/logging-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/logic-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/main-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/main-settings-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/persist-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/process-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/relation-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/run-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/sbinary_2.10-0.4.2.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/sbt-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/scala-reflect-2.10.4.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/task-system-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/tasks-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/test-agent-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/test-interface-1.0.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/testing-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/tracking-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/xsbti/interface-0.13.5.jar"/>
+  </path>
+  
+  <path id="nettytest-build.module.classpath">
+    <path refid="${module.jdk.classpath.nettytest-build}"/>
+    <pathelement location="${nettytest-build.output.dir}"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/lib/jansi.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/lib/jline.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/lib/scala-compiler.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/lib/scala-library.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/lib/scala-reflect.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/actions-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/api-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/apply-macro-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/cache-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/classfile-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/classpath-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/collections-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/command-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/compile-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/compiler-integration-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/compiler-ivy-integration-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/completion-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/control-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/cross-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/incremental-compiler-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/io-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/ivy-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/ivy-2.3.0.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/jline-2.11.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/jsch-0.1.46.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/launcher-interface-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/logging-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/logic-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/main-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/main-settings-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/persist-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/process-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/relation-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/run-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/sbinary_2.10-0.4.2.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/sbt-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/scala-reflect-2.10.4.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/task-system-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/tasks-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/test-agent-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/test-interface-1.0.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/testing-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/tracking-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/xsbti/interface-0.13.5.jar"/>
+  </path>
+  
+  <path id="nettytest-build.runtime.module.classpath">
+    <pathelement location="${nettytest-build.testoutput.dir}"/>
+    <pathelement location="${nettytest-build.output.dir}"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/lib/jansi.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/lib/jline.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/lib/scala-compiler.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/lib/scala-library.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/lib/scala-reflect.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/actions-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/api-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/apply-macro-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/cache-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/classfile-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/classpath-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/collections-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/command-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/compile-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/compiler-integration-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/compiler-ivy-integration-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/completion-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/control-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/cross-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/incremental-compiler-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/io-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/ivy-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/ivy-2.3.0.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/jline-2.11.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/jsch-0.1.46.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/launcher-interface-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/logging-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/logic-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/main-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/main-settings-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/persist-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/process-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/relation-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/run-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/sbinary_2.10-0.4.2.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/sbt-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/scala-reflect-2.10.4.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/task-system-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/tasks-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/test-agent-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/test-interface-1.0.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/testing-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/tracking-0.13.5.jar"/>
+    <pathelement location="${basedir}/../../../.sbt/boot/scala-2.10.4/org.scala-sbt/sbt/0.13.5/xsbti/interface-0.13.5.jar"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.nettytest-build">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.nettytest-build">
+    <patternset refid="excluded.from.module.nettytest-build"/>
+  </patternset>
+  
+  
+  <target name="compile.module.nettytest-build" depends="compile.module.nettytest-build.production,compile.module.nettytest-build.tests" description="Compile module nettytest-build"/>
+  
+  <target name="compile.module.nettytest-build.production" description="Compile module nettytest-build; production classes"/>
+  
+  <target name="compile.module.nettytest-build.tests" depends="compile.module.nettytest-build.production" description="compile module nettytest-build; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.nettytest-build" description="cleanup module">
+    <delete dir="${nettytest-build.output.dir}"/>
+    <delete dir="${nettytest-build.testoutput.dir}"/>
+  </target>
+</project>

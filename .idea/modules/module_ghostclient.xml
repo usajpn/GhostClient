@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_ghostclient" default="compile.module.ghostclient">
+  <dirname property="module.ghostclient.basedir" file="${ant.file.module_ghostclient}"/>
+  
+  <property name="module.jdk.home.ghostclient" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.ghostclient" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.ghostclient" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.ghostclient" value="-encoding UTF-8 -source 1.6 ${compiler.args}"/>
+  
+  <property name="ghostclient.output.dir" value="${module.ghostclient.basedir}/../../target/scala-2.10/classes"/>
+  <property name="ghostclient.testoutput.dir" value="${module.ghostclient.basedir}/../../target/scala-2.10/test-classes"/>
+  
+  <path id="ghostclient.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="ghostclient.module.production.classpath">
+    <path refid="${module.jdk.classpath.ghostclient}"/>
+    <path refid="library.sbt:_org.scala-lang:scala-library:2.10.4.classpath"/>
+    <path refid="library.sbt:_io.netty:netty-all:4.0.4.final.classpath"/>
+    <path refid="library.sbt:_ghostcommonlib:ghostcommonlib:0.28-beta.classpath"/>
+    <path refid="library.sbt:_commons-pool:commons-pool:1.6.classpath"/>
+    <path refid="library.sbt:_net.jcip:jcip-annotations:1.0.classpath"/>
+    <path refid="library.sbt:_org.infinispan:infinispan-client-hotrod:6.0.2.final.classpath"/>
+    <path refid="library.sbt:_org.infinispan:infinispan-commons:6.0.2.final.classpath"/>
+    <path refid="library.sbt:_org.infinispan:infinispan-core:6.0.2.final.classpath"/>
+    <path refid="library.sbt:_org.jboss.logging:jboss-logging:3.1.2.ga.classpath"/>
+    <path refid="library.sbt:_org.jboss.marshalling:jboss-marshalling:1.4.4.final.classpath"/>
+    <path refid="library.sbt:_org.jboss.marshalling:jboss-marshalling-river:1.4.4.final.classpath"/>
+    <path refid="library.sbt:_org.jboss.spec.javax.transaction:jboss-transaction-api_1.1_spec:1.0.1.final.classpath"/>
+    <path refid="library.sbt:_org.jgroups:jgroups:3.4.1.final.classpath"/>
+  </path>
+  
+  <path id="ghostclient.runtime.production.module.classpath">
+    <pathelement location="${ghostclient.output.dir}"/>
+    <path refid="library.sbt:_org.scala-lang:scala-library:2.10.4.classpath"/>
+    <path refid="library.sbt:_io.netty:netty-all:4.0.4.final.classpath"/>
+    <path refid="library.sbt:_ghostcommonlib:ghostcommonlib:0.28-beta.classpath"/>
+    <path refid="library.sbt:_commons-pool:commons-pool:1.6.classpath"/>
+    <path refid="library.sbt:_net.jcip:jcip-annotations:1.0.classpath"/>
+    <path refid="library.sbt:_org.infinispan:infinispan-client-hotrod:6.0.2.final.classpath"/>
+    <path refid="library.sbt:_org.infinispan:infinispan-commons:6.0.2.final.classpath"/>
+    <path refid="library.sbt:_org.infinispan:infinispan-core:6.0.2.final.classpath"/>
+    <path refid="library.sbt:_org.jboss.logging:jboss-logging:3.1.2.ga.classpath"/>
+    <path refid="library.sbt:_org.jboss.marshalling:jboss-marshalling:1.4.4.final.classpath"/>
+    <path refid="library.sbt:_org.jboss.marshalling:jboss-marshalling-river:1.4.4.final.classpath"/>
+    <path refid="library.sbt:_org.jboss.spec.javax.transaction:jboss-transaction-api_1.1_spec:1.0.1.final.classpath"/>
+    <path refid="library.sbt:_org.jgroups:jgroups:3.4.1.final.classpath"/>
+  </path>
+  
+  <path id="ghostclient.module.classpath">
+    <path refid="${module.jdk.classpath.ghostclient}"/>
+    <pathelement location="${ghostclient.output.dir}"/>
+    <path refid="library.sbt:_org.scala-lang:scala-library:2.10.4.classpath"/>
+    <path refid="library.sbt:_io.netty:netty-all:4.0.4.final.classpath"/>
+    <path refid="library.sbt:_ghostcommonlib:ghostcommonlib:0.28-beta.classpath"/>
+    <path refid="library.sbt:_commons-pool:commons-pool:1.6.classpath"/>
+    <path refid="library.sbt:_net.jcip:jcip-annotations:1.0.classpath"/>
+    <path refid="library.sbt:_org.infinispan:infinispan-client-hotrod:6.0.2.final.classpath"/>
+    <path refid="library.sbt:_org.infinispan:infinispan-commons:6.0.2.final.classpath"/>
+    <path refid="library.sbt:_org.infinispan:infinispan-core:6.0.2.final.classpath"/>
+    <path refid="library.sbt:_org.jboss.logging:jboss-logging:3.1.2.ga.classpath"/>
+    <path refid="library.sbt:_org.jboss.marshalling:jboss-marshalling:1.4.4.final.classpath"/>
+    <path refid="library.sbt:_org.jboss.marshalling:jboss-marshalling-river:1.4.4.final.classpath"/>
+    <path refid="library.sbt:_org.jboss.spec.javax.transaction:jboss-transaction-api_1.1_spec:1.0.1.final.classpath"/>
+    <path refid="library.sbt:_org.jgroups:jgroups:3.4.1.final.classpath"/>
+  </path>
+  
+  <path id="ghostclient.runtime.module.classpath">
+    <pathelement location="${ghostclient.testoutput.dir}"/>
+    <pathelement location="${ghostclient.output.dir}"/>
+    <path refid="library.sbt:_org.scala-lang:scala-library:2.10.4.classpath"/>
+    <path refid="library.sbt:_io.netty:netty-all:4.0.4.final.classpath"/>
+    <path refid="library.sbt:_ghostcommonlib:ghostcommonlib:0.28-beta.classpath"/>
+    <path refid="library.sbt:_commons-pool:commons-pool:1.6.classpath"/>
+    <path refid="library.sbt:_net.jcip:jcip-annotations:1.0.classpath"/>
+    <path refid="library.sbt:_org.infinispan:infinispan-client-hotrod:6.0.2.final.classpath"/>
+    <path refid="library.sbt:_org.infinispan:infinispan-commons:6.0.2.final.classpath"/>
+    <path refid="library.sbt:_org.infinispan:infinispan-core:6.0.2.final.classpath"/>
+    <path refid="library.sbt:_org.jboss.logging:jboss-logging:3.1.2.ga.classpath"/>
+    <path refid="library.sbt:_org.jboss.marshalling:jboss-marshalling:1.4.4.final.classpath"/>
+    <path refid="library.sbt:_org.jboss.marshalling:jboss-marshalling-river:1.4.4.final.classpath"/>
+    <path refid="library.sbt:_org.jboss.spec.javax.transaction:jboss-transaction-api_1.1_spec:1.0.1.final.classpath"/>
+    <path refid="library.sbt:_org.jgroups:jgroups:3.4.1.final.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.ghostclient">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.ghostclient">
+    <patternset refid="excluded.from.module.ghostclient"/>
+  </patternset>
+  
+  <path id="ghostclient.module.sourcepath">
+    <dirset dir="${module.ghostclient.basedir}/../../../GhostClient">
+      <include name="target/scala-2.10/src_managed/main"/>
+      <include name="src/main/scala"/>
+      <include name="src/main/java"/>
+      <include name="src/main/resources"/>
+      <include name="target/scala-2.10/resource_managed/main"/>
+    </dirset>
+  </path>
+  
+  <path id="ghostclient.module.test.sourcepath">
+    <dirset dir="${module.ghostclient.basedir}/../../../GhostClient">
+      <include name="target/scala-2.10/src_managed/test"/>
+      <include name="src/test/scala"/>
+      <include name="src/test/java"/>
+      <include name="target/scala-2.10/resource_managed/test"/>
+      <include name="src/test/resources"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.ghostclient" depends="compile.module.ghostclient.production,compile.module.ghostclient.tests" description="Compile module ghostclient"/>
+  
+  <target name="compile.module.ghostclient.production" description="Compile module ghostclient; production classes">
+    <mkdir dir="${ghostclient.output.dir}"/>
+    <javac destdir="${ghostclient.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.ghostclient}/javac">
+      <compilerarg line="${compiler.args.ghostclient}"/>
+      <bootclasspath refid="ghostclient.module.bootclasspath"/>
+      <classpath refid="ghostclient.module.production.classpath"/>
+      <src refid="ghostclient.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.ghostclient"/>
+    </javac>
+    
+    <copy todir="${ghostclient.output.dir}">
+      <fileset dir="${module.ghostclient.basedir}/../../target/scala-2.10/src_managed/main">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.ghostclient.basedir}/../../src/main/scala">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.ghostclient.basedir}/../../src/main/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.ghostclient.basedir}/../../src/main/resources">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.ghostclient.basedir}/../../target/scala-2.10/resource_managed/main">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.ghostclient.tests" depends="compile.module.ghostclient.production" description="compile module ghostclient; test classes" unless="skip.tests">
+    <mkdir dir="${ghostclient.testoutput.dir}"/>
+    <javac destdir="${ghostclient.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.ghostclient}/javac">
+      <compilerarg line="${compiler.args.ghostclient}"/>
+      <bootclasspath refid="ghostclient.module.bootclasspath"/>
+      <classpath refid="ghostclient.module.classpath"/>
+      <src refid="ghostclient.module.test.sourcepath"/>
+      <patternset refid="excluded.from.compilation.ghostclient"/>
+    </javac>
+    
+    <copy todir="${ghostclient.testoutput.dir}">
+      <fileset dir="${module.ghostclient.basedir}/../../target/scala-2.10/src_managed/test">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.ghostclient.basedir}/../../src/test/scala">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.ghostclient.basedir}/../../src/test/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.ghostclient.basedir}/../../target/scala-2.10/resource_managed/test">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.ghostclient.basedir}/../../src/test/resources">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="clean.module.ghostclient" description="cleanup module">
+    <delete dir="${ghostclient.output.dir}"/>
+    <delete dir="${ghostclient.testoutput.dir}"/>
+  </target>
+</project>
