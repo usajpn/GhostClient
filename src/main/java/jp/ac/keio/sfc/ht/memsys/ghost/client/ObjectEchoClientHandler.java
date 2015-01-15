@@ -27,12 +27,11 @@ import jp.ac.keio.sfc.ht.memsys.ghost.commonlib.datatypes.GhostResponseTypes;
 import jp.ac.keio.sfc.ht.memsys.ghost.commonlib.requests.*;
 import jp.ac.keio.sfc.ht.memsys.ghost.commonlib.tasks.OffloadableTask;
 import jp.ac.keio.sfc.ht.memsys.ghost.commonlib.util.Util;
-import jp.ac.keio.sfc.ht.memsys.ghost.sift.FloatArray2D;
-import jp.ac.keio.sfc.ht.memsys.ghost.sift.SIFT;
-import jp.ac.keio.sfc.ht.memsys.ghost.sift.SIFTTask;
+import jp.ac.keio.sfc.ht.memsys.ghost.sift.*;
 import org.infinispan.client.hotrod.RemoteCache;
 
 import java.awt.image.BufferedImage;
+import java.util.Vector;
 
 /**
  * Handler implementation for the object echo client.  It initiates the
@@ -45,41 +44,43 @@ public class ObjectEchoClientHandler extends ChannelInboundHandlerAdapter {
     RemoteCache<String, OffloadableTask> mTaskCache = cacheContainer.getCache(CacheKeys.TASK_CACHE);
     RemoteCache<String, OffloadableData> mResultCache  = cacheContainer.getCache(CacheKeys.RESULT_CACHE);
 
-    //    private final List<Integer> firstMessage;
     private final GhostRequest mes;
     private String appId;
     private String taskId;
     private final String taskName = "SIFT";
-    private String num = "";
-//    private int queenNum = 0;
     private long start;
     private long end;
+    private int octNum;
+
+    // constants for SIFT
+    private int steps = 5;
+    private float initial_sigma = 1.6f;
+    private int fdsize = 4;
+    private int fdbins = 8;
+    private int min_size = 64;
+    private int max_size = 1024;
+
+    // for all results
+    private Vector<Feature> features = new Vector<Feature>();
 
     /**
      * Creates a client-side handler.
      */
-    public ObjectEchoClientHandler(String n, int qn) {
-        this.num = n;
+    public ObjectEchoClientHandler() {
 //        this.queenNum = qn;
         Bundle bundle = new Bundle();
-        bundle.putData(BundleKeys.APP_NAME, "SIFTAPP" + this.num);
+        bundle.putData(BundleKeys.APP_NAME, "SIFTAPP");
         mes = new GhostRequest(GhostRequestTypes.INIT, bundle);
     }
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) {
-        // Send the first message if this handler is a client-side handler.
-//        ctx.writeAndFlush(firstMessage);
-        //INIT APP
-//        ctx.writeAndFlush(mes);
         start = System.currentTimeMillis();
         ctx.writeAndFlush(mes);
     }
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws InterruptedException {
-        // Echo back the received object to the server.
-//        System.out.println(m);
         GhostResponse in = (GhostResponse) msg;
         GhostRequest req = null;
         if (in.STATUS.equals(GhostResponseTypes.SUCCESS)) {
@@ -101,32 +102,50 @@ public class ObjectEchoClientHandler extends ChannelInboundHandlerAdapter {
                 req = new GhostRequest(GhostRequestTypes.REGISTERTASK, bundle);
 
             } else if (in.REQUESTID.equals(GhostRequestTypes.REGISTERTASK)) {
-                // Cache Data
-                String seq = this.num;
-//                OffloadableData data = NQueenUtil.genData(taskId, seq, this.queenNum);
-//                String path = Util.dataPathBuilder(taskId, seq);
-//                mDataCache.put(path, data);
-
+                // SIFT Algorithm
                 ImageSample imageContainer = new ImageSample();
                 BufferedImage image = imageContainer.getImage();
-                OffloadableData data = SIFTUtil.genData(taskId, seq, image);
-                String path = Util.dataPathBuilder(taskId, seq);
-                mDataCache.put(path, data);
+                int[] pixels = SIFTUtil.getPixelsTab(image);
+                FloatArray2D fa = SIFT.ArrayToFloatArray2D(image.getWidth(), image.getHeight(), pixels);
 
-                // Execute Task
-                Bundle bundle = new Bundle();
-                bundle.putData(BundleKeys.APP_ID, appId);
-                bundle.putData(BundleKeys.TASK_ID, taskId);
-                bundle.putData(BundleKeys.DATA_SEQ, seq);
+                FloatArray2DSIFT sift = new FloatArray2DSIFT(fdsize, fdbins);
+                Filter.enhance(fa, 1.0f);
 
-                req = new GhostRequest(GhostRequestTypes.EXECUTE, bundle);
+                fa = Filter.computeGaussianFastMirror(fa, (float) Math.sqrt(initial_sigma * initial_sigma - 0.25));
+                sift.init(fa, steps, initial_sigma, min_size, max_size);
+
+                octNum = sift.getOctaves().length;
+                System.out.println("octNum: " + octNum);
+
+                for (int o=0; o<octNum; o++) {
+                    System.out.println("execute request: " + o);
+                    String seq = String.valueOf(o);
+                    OffloadableData data = new OffloadableData(taskId, seq);
+                    data.putData("OCTAVE", sift.getOctave(o));
+                    data.putData("SEQ", seq);
+                    mDataCache.put(Util.dataPathBuilder(taskId, seq), data);
+
+                    Bundle bundle = new Bundle();
+                    bundle.putData(BundleKeys.APP_ID, appId);
+                    bundle.putData(BundleKeys.TASK_ID, taskId);
+                    bundle.putData(BundleKeys.DATA_SEQ, seq);
+
+                    GhostRequest request = new GhostRequest(GhostRequestTypes.EXECUTE, bundle);
+                    ctx.write(request);
+                }
+                req = null;
+
             } else if (in.REQUESTID.equals(GhostRequestTypes.EXECUTE)) {
-                // TODO if SUCCESS
-                OffloadableData resultData = mResultCache.get(Util.dataPathBuilder(taskId, this.num));
-//                System.out.println(resultData.getData("result_data"));
-                end = System.currentTimeMillis();
-                System.out.println(this.num + " " + (end - start));
-                ctx.close();
+                octNum = octNum - 1;
+                String resultSeq = in.MESSAGE.getData(BundleKeys.DATA_SEQ);
+
+                OffloadableData feature = mResultCache.get(Util.dataPathBuilder(taskId, resultSeq));
+                features.addAll((Vector<Feature>)feature.getData("FEATURE"));
+                if (octNum == 0) {
+                    end = System.currentTimeMillis();
+                    System.out.println("TIME: " + (end - start));
+                    ctx.close();
+                }
 
             } else {
                 // do nothing
