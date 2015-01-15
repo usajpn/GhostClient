@@ -7,7 +7,7 @@
 		revision="1.0"
 		conf="test-internal"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20150115202124"/>
+		date="20150116070356"/>
 	<dependencies>
 		<module organisation="io.netty" name="netty-all">
 			<revision name="4.0.4.Final" status="release" pubdate="20130723084829" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="13">
@@ -149,12 +149,12 @@
 			</revision>
 		</module>
 		<module organisation="GhostCommonLib" name="GhostCommonLib">
-			<revision name="0.28-BETA" status="release" pubdate="20141221161501" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="1">
-				<metadata-artifact status="no" details="" size="2297" time="0" location="/Users/usa/.ivy2/cache/GhostCommonLib/GhostCommonLib/ivy-0.28-BETA.xml" searched="false" origin-is-local="false" origin-location="http://usajpn.github.io/GhostCommonLib-mvn-repo/GhostCommonLib/GhostCommonLib/0.28-BETA/GhostCommonLib-0.28-BETA.pom"/>
-				<caller organisation="ghostclient" name="ghostclient_2.10" conf="test-internal, test, optional, compile, provided, runtime" rev="0.28-BETA" rev-constraint-default="0.28-BETA" rev-constraint-dynamic="0.28-BETA" callerrev="1.0"/>
+			<revision name="0.29-BETA" status="release" pubdate="20150116070219" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="1">
+				<metadata-artifact status="no" details="" size="2297" time="0" location="/Users/usa/.ivy2/cache/GhostCommonLib/GhostCommonLib/ivy-0.29-BETA.xml" searched="false" origin-is-local="false" origin-location="http://usajpn.github.io/GhostCommonLib-mvn-repo/GhostCommonLib/GhostCommonLib/0.29-BETA/GhostCommonLib-0.29-BETA.pom"/>
+				<caller organisation="ghostclient" name="ghostclient_2.10" conf="test-internal, test, optional, compile, provided, runtime" rev="0.29-BETA" rev-constraint-default="0.29-BETA" rev-constraint-dynamic="0.29-BETA" callerrev="1.0"/>
 				<artifacts>
-					<artifact name="GhostCommonLib" type="jar" ext="jar" status="no" details="" size="11706" time="0" location="/Users/usa/.ivy2/cache/GhostCommonLib/GhostCommonLib/jars/GhostCommonLib-0.28-BETA.jar">
-						<origin-location is-local="false" location="http://usajpn.github.io/GhostCommonLib-mvn-repo/GhostCommonLib/GhostCommonLib/0.28-BETA/GhostCommonLib-0.28-BETA.jar"/>
+					<artifact name="GhostCommonLib" type="jar" ext="jar" status="no" details="" size="11728" time="0" location="/Users/usa/.ivy2/cache/GhostCommonLib/GhostCommonLib/jars/GhostCommonLib-0.29-BETA.jar">
+						<origin-location is-local="false" location="http://usajpn.github.io/GhostCommonLib-mvn-repo/GhostCommonLib/GhostCommonLib/0.29-BETA/GhostCommonLib-0.29-BETA.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>

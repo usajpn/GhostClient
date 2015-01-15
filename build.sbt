@@ -7,7 +7,7 @@ val infinispanVersion = "6.0.2.Final"
 resolvers += "Github" at "http://usajpn.github.io/GhostCommonLib-mvn-repo"
 
 libraryDependencies ++= Seq(
-  "GhostCommonLib" % "GhostCommonLib" % "0.28-BETA",
+  "GhostCommonLib" % "GhostCommonLib" % "0.29-BETA",
   "org.infinispan" % "infinispan-client-hotrod" % infinispanVersion excludeAll(
     ExclusionRule(organization = "org.jboss.marshalling", name = "jboss-marshalling-river"),
     ExclusionRule(organization = "org.jboss.logging", name = "jboss-logging")

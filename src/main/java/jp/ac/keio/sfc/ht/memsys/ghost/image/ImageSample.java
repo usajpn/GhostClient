@@ -20,7 +20,7 @@ public class ImageSample {
         BufferedImage readImage = null;
 
         try {
-            readImage = ImageIO.read(new File("/Users/usa/sample.jpg"));
+            readImage = ImageIO.read(new File("/Users/usa/sample.jpeg"));
         } catch (Exception e) {
             e.printStackTrace();
             readImage = null;

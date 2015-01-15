@@ -39,18 +39,20 @@ import java.util.Vector;
  * first message to the server.
  */
 public class ObjectEchoClientHandler extends ChannelInboundHandlerAdapter {
-    RemoteCacheContainer cacheContainer = RemoteCacheContainer.getInstance();
-    RemoteCache<String, OffloadableData> mDataCache = cacheContainer.getCache(CacheKeys.DATA_CACHE);
-    RemoteCache<String, OffloadableTask> mTaskCache = cacheContainer.getCache(CacheKeys.TASK_CACHE);
-    RemoteCache<String, OffloadableData> mResultCache  = cacheContainer.getCache(CacheKeys.RESULT_CACHE);
+    RemoteCacheContainer cacheContainer = null;
+    RemoteCache<String, OffloadableData> mDataCache;
+    RemoteCache<String, OffloadableTask> mTaskCache;
+    RemoteCache<String, OffloadableData> mResultCache;
 
     private final GhostRequest mes;
     private String appId;
     private String taskId;
+    private String cacheIP;
     private final String taskName = "SIFT";
     private long start;
     private long end;
     private int octNum;
+
 
     // constants for SIFT
     private int steps = 5;
@@ -88,8 +90,15 @@ public class ObjectEchoClientHandler extends ChannelInboundHandlerAdapter {
                 // save appid and taskid
                 appId = in.MESSAGE.getData(BundleKeys.APP_ID);
                 taskId = Util.taskPathBuilder(appId, taskName);
+                cacheIP = in.MESSAGE.getData(BundleKeys.IP_ADDR);
 //                System.out.println("App ID:" + appId);
 //                System.out.println("Task ID:" + taskId);
+
+                // initialize cache from ip address
+                cacheContainer = RemoteCacheContainer.getInstance(cacheIP);
+                mDataCache = cacheContainer.getCache(CacheKeys.DATA_CACHE);
+                mTaskCache = cacheContainer.getCache(CacheKeys.TASK_CACHE);
+                mResultCache  = cacheContainer.getCache(CacheKeys.RESULT_CACHE);
 
                 OffloadableTask task = new SIFTTask();
                 // Cache Task

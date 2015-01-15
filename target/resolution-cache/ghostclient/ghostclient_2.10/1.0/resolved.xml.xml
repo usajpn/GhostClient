@@ -4,7 +4,7 @@
 		module="ghostclient_2.10"
 		revision="1.0"
 		status="integration"
-		publication="20150115202124"
+		publication="20150116070356"
 	>
 		<description>
 		GhostClient
@@ -32,7 +32,7 @@
 	<dependencies>
 		<dependency org="org.scala-lang" name="scala-compiler" rev="2.10.4" conf="scala-tool->default,optional(default)"/>
 		<dependency org="org.scala-lang" name="scala-library" rev="2.10.4" conf="scala-tool->default,optional(default);compile->default(compile)"/>
-		<dependency org="GhostCommonLib" name="GhostCommonLib" rev="0.28-BETA" conf="compile->default(compile)"/>
+		<dependency org="GhostCommonLib" name="GhostCommonLib" rev="0.29-BETA" conf="compile->default(compile)"/>
 		<dependency org="org.infinispan" name="infinispan-client-hotrod" rev="6.0.2.Final" conf="compile->default(compile)">
 			<exclude org="org.jboss.marshalling" module="jboss-marshalling-river" name="*" type="*" ext="*" conf="" matcher="exact"/>
 			<exclude org="org.jboss.logging" module="jboss-logging" name="*" type="*" ext="*" conf="" matcher="exact"/>

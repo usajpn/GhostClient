@@ -28,7 +28,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="SBT: org.scala-lang:scala-library:2.10.4" level="project" />
     <orderEntry type="library" name="SBT: io.netty:netty-all:4.0.4.Final" level="project" />
-    <orderEntry type="library" name="SBT: GhostCommonLib:GhostCommonLib:0.28-BETA" level="project" />
     <orderEntry type="library" name="SBT: commons-pool:commons-pool:1.6" level="project" />
     <orderEntry type="library" name="SBT: net.jcip:jcip-annotations:1.0" level="project" />
     <orderEntry type="library" name="SBT: org.infinispan:infinispan-client-hotrod:6.0.2.Final" level="project" />
@@ -40,6 +39,7 @@
     <orderEntry type="library" name="SBT: org.jboss.spec.javax.transaction:jboss-transaction-api_1.1_spec:1.0.1.Final" level="project" />
     <orderEntry type="library" name="SBT: org.jgroups:jgroups:3.4.1.Final" level="project" />
     <orderEntry type="library" name="SBT: gov.nist.math:jama:1.0.3" level="project" />
+    <orderEntry type="library" name="SBT: GhostCommonLib:GhostCommonLib:0.29-BETA" level="project" />
   </component>
 </module>
 
