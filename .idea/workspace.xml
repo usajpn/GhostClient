@@ -23,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="build.sbt" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build.sbt">
+      <file leaf-file-name="SIFT.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/sift/SIFT.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="540">
-              <caret line="26" column="2" selection-start-line="26" selection-start-column="2" selection-end-line="26" selection-end-column="2" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2070">
+              <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -36,18 +36,8 @@
       <file leaf-file-name="ObjectEchoClient.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/client/ObjectEchoClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="1200">
-              <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FloatArray2DScaleOctaveDoGDetector.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/sift/FloatArray2DScaleOctaveDoGDetector.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.1978022" vertical-offset="0" max-vertical-offset="6795">
-              <caret line="6" column="2" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="435" max-vertical-offset="1350">
+              <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -55,21 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ObjectEchoServerHandler.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/testserver/ObjectEchoServerHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="735" max-vertical-offset="1080">
-              <caret line="49" column="35" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ObjectEchoClientHandler.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="ObjectEchoClientHandler.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/client/ObjectEchoClientHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="2190">
-              <caret line="46" column="28" selection-start-line="46" selection-start-column="28" selection-end-line="46" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.5334728" vertical-offset="1425" max-vertical-offset="2400">
+              <caret line="112" column="63" selection-start-line="112" selection-start-column="63" selection-end-line="112" selection-end-column="63" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -77,51 +57,78 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RemoteCacheContainer.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/cache/RemoteCacheContainer.java">
+      <file leaf-file-name="SIFTTask.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/sift/SIFTTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="1110">
-              <caret line="26" column="30" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="381" max-vertical-offset="10980">
+              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1495#1504#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FloatArray2DScaleOctave.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/sift/FloatArray2DScaleOctave.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="4967" max-vertical-offset="5445">
+              <caret line="53" column="13" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NQueenTaskKeys.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/nqueen/NQueenTaskKeys.java">
+      <file leaf-file-name="FloatArray2DScaleOctaveDoGDetector.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/sift/FloatArray2DScaleOctaveDoGDetector.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="375">
+            <state vertical-scroll-proportion="0.0" vertical-offset="546" max-vertical-offset="6795">
+              <caret line="47" column="13" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FloatArray2D.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/sift/FloatArray2D.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="1545">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FloatArray2DSIFT.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/sift/FloatArray2DSIFT.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="3750" max-vertical-offset="7785">
+              <caret line="267" column="33" selection-start-line="267" selection-start-column="33" selection-end-line="267" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SIFTUtil.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/image/SIFTUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="930">
+              <caret line="12" column="72" selection-start-line="12" selection-start-column="72" selection-end-line="12" selection-end-column="72" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SIFTThread.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/image/SIFTThread.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="2400">
               <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NQueenTaskImpl.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/nqueen/NQueenTaskImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="720" max-vertical-offset="1155">
-              <caret line="48" column="10" selection-start-line="48" selection-start-column="10" selection-end-line="48" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ObjectEchoServer.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/testserver/ObjectEchoServer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="1275">
-              <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NQueenUtil.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/nqueen/NQueenUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="615">
-              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -154,10 +161,15 @@
         <option value="$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/NQueenTaskImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/nqueen/NQueenTaskImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/cache/RemoteCacheContainer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/client/ObjectEchoClientHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/sift/FloatArray2DScaleOctaveDoGDetector.java" />
-        <option value="$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/client/ObjectEchoClient.java" />
         <option value="$PROJECT_DIR$/build.sbt" />
+        <option value="$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/client/ObjectEchoClient.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/image/ImageSample.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/image/NQueenTaskKeys.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/image/SIFTTaskKeys.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/client/ObjectEchoClientHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/image/SIFTUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/sift/SIFTTask.java" />
       </list>
     </option>
   </component>
@@ -165,7 +177,7 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-13" />
+    <option name="x" value="62" />
     <option name="y" value="22" />
     <option name="width" value="1436" />
     <option name="height" value="878" />
@@ -478,6 +490,36 @@
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="image" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NettyTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GhostClient" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ghost" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="client" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -544,9 +586,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="jp.ac.keio.sfc.ht.memsys.ghost.image" />
       <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/image" />
       <recent name="$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost" />
       <recent name="$PROJECT_DIR$/src/main/java" />
       <recent name="$PROJECT_DIR$/src/main/java/nqueen" />
@@ -835,7 +879,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-13" y="22" width="1436" height="878" extended-state="6" />
+    <frame x="62" y="22" width="1436" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -893,88 +937,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/cache/RemoteCacheContainer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="1110">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/nqueen/NQueenTaskKeys.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="375">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/nqueen/NQueenTaskImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="1155">
-          <caret line="51" column="21" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/testserver/ObjectEchoServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="1275">
-          <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/nqueen/NQueenUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="615">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.sbt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
-          <caret line="0" column="19" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/client/ObjectEchoClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="706" max-vertical-offset="1155">
-          <caret line="39" column="24" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/testserver/ObjectEchoServerHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="750" max-vertical-offset="1080">
-          <caret line="50" column="8" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/client/ObjectEchoClientHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="7" max-vertical-offset="2085">
-          <caret line="111" column="66" selection-start-line="111" selection-start-column="66" selection-end-line="111" selection-end-column="66" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NettyTest.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/cache/RemoteCacheContainer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="1110">
           <caret line="25" column="108" selection-start-line="25" selection-start-column="108" selection-end-line="25" selection-end-column="108" />
           <folding />
         </state>
@@ -1016,7 +978,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="495" max-vertical-offset="1170">
           <caret line="33" column="76" selection-start-line="33" selection-start-column="76" selection-end-line="33" selection-end-column="76" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1089,7 +1053,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="660" max-vertical-offset="1170">
           <caret line="60" column="89" selection-start-line="60" selection-start-column="89" selection-end-line="60" selection-end-column="89" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1236,44 +1202,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/nqueen/NQueenUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="166" max-vertical-offset="615">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/nqueen/NQueenTaskKeys.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/cache/RemoteCacheContainer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1050">
           <caret line="26" column="30" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/client/ObjectEchoClientHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="2190">
-          <caret line="46" column="28" selection-start-line="46" selection-start-column="28" selection-end-line="46" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/client/ObjectEchoClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="1200">
-          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1286,10 +1218,133 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/nqueen/NQueenTaskKeys.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/nqueen/NQueenUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="94" max-vertical-offset="615">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/image/SIFTTaskKeys.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
+          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/image/ImageUtility.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/image/ImageSample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="321" max-vertical-offset="2220">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/sift/SIFT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2070">
+          <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/sift/FloatArray2D.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="1545">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/image/SIFTThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2400">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/image/SIFTUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="930">
+          <caret line="12" column="72" selection-start-line="12" selection-start-column="72" selection-end-line="12" selection-end-column="72" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/sift/FloatArray2DSIFT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3750" max-vertical-offset="7785">
+          <caret line="267" column="33" selection-start-line="267" selection-start-column="33" selection-end-line="267" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/sift/FloatArray2DScaleOctave.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4967" max-vertical-offset="5445">
+          <caret line="53" column="13" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/sift/FloatArray2DScaleOctaveDoGDetector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1978022" vertical-offset="0" max-vertical-offset="6795">
-          <caret line="6" column="2" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="546" max-vertical-offset="6795">
+          <caret line="47" column="13" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/sift/SIFTTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="381" max-vertical-offset="10980">
+          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1495#1504#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/client/ObjectEchoClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="435" max-vertical-offset="1395">
+          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/client/ObjectEchoClientHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5334728" vertical-offset="1425" max-vertical-offset="2400">
+          <caret line="112" column="63" selection-start-line="112" selection-start-column="63" selection-end-line="112" selection-end-column="63" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

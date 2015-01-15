@@ -3,7 +3,10 @@ package jp.ac.keio.sfc.ht.memsys.ghost.sift;
 import Jama.Matrix;
 import jp.ac.keio.sfc.ht.memsys.ghost.commonlib.data.OffloadableData;
 import jp.ac.keio.sfc.ht.memsys.ghost.commonlib.tasks.OffloadableTask;
+import jp.ac.keio.sfc.ht.memsys.ghost.image.ImageSample;
+import jp.ac.keio.sfc.ht.memsys.ghost.image.SIFTUtil;
 
+import java.awt.image.BufferedImage;
 import java.util.Vector;
 
 /**
@@ -14,11 +17,57 @@ public class SIFTTask implements OffloadableTask {
     private final static String NAME = "SIFT";
     private FloatArray2DScaleOctave mOctave;
     private int mSeq = 0;
+    private int fdsize = 4;
+    private int fdbins = 8;
+    private int steps = 5;
+    private float initial_sigma = 1.6f;
+    private int min_size = 64;
+    private int max_size = 1024;
 
     @Override
     public OffloadableData run(OffloadableData offloadableData) {
+        BufferedImage image = (BufferedImage) offloadableData.getData("sift_data");
+        ImageSample imageContainer = new ImageSample(image);
+        int[] pixels = SIFTUtil.getPixelsTab(image);
+        FloatArray2D fa = SIFT.ArrayToFloatArray2D(image.getWidth(), image.getHeight(), pixels);
+        FloatArray2DSIFT sift = new FloatArray2DSIFT(fdsize, fdbins);
+        Filter.enhance(fa, 1.0f);
+
+//        fa = Filter.computeGaussianFastMirror(fa, (Math.sqrt(initial_sigma * initial_sigma - 0.25)).asInstanceOf[Float])
+//        sift.init(fa, steps, initial_sigma, min_size, max_size)
 
         Vector<Feature> features = new Vector<Feature>();
+
+        for(int o=0; o < sift.getOctaves().length; o++){
+
+//            val seq :String = o.toString
+//
+//            val data :OffloadableData = new OffloadableData(TASK_ID, seq)
+//            data.putData("OCTAVE", sift.getOctave(o))
+//            data.putData("SEQ", seq)
+//            mDataCache.put(Util.dataPathBuilder(TASK_ID, seq), data)
+//
+//            val eBundle: Bundle = new Bundle()
+//            eBundle.putData(BundleKeys.APP_ID, APP_ID)
+//            eBundle.putData(BundleKeys.TASK_ID, TASK_ID)
+//            eBundle.putData(BundleKeys.DATA_SEQ, seq)
+//
+//            val eRequest: GhostRequest = new GhostRequest(GhostRequestTypes.EXECUTE, eBundle)
+//
+//            val res :Future[Any] = gateway.executeTask(eRequest)
+//
+//            implicit val timeout = Timeout(10 seconds)
+//            val result = Await.result(res, timeout.duration).asInstanceOf[GhostResponse]
+//            val taskId = result.MESSAGE.getData(BundleKeys.TASK_ID)
+//            val dataSeq = result.MESSAGE.getData(BundleKeys.DATA_SEQ)
+//            val feature: OffloadableData = mResultCache.get(Util.dataPathBuilder(taskId, dataSeq))
+//            features.addAll(feature.getData("FEATURE").asInstanceOf[util.Vector[Feature]])
+
+        }
+//        util.Collections.sort(features)
+//        return features
+
+//        Vector<Feature> features = new Vector<Feature>();
         mOctave = (FloatArray2DScaleOctave) offloadableData.getData("OCTAVE");
         mSeq = Integer.valueOf((String)offloadableData.getData("SEQ"));
         mOctave.build();

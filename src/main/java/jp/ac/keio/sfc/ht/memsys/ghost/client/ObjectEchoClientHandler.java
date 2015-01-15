@@ -17,6 +17,8 @@ package jp.ac.keio.sfc.ht.memsys.ghost.client;/*
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import jp.ac.keio.sfc.ht.memsys.ghost.cache.RemoteCacheContainer;
+import jp.ac.keio.sfc.ht.memsys.ghost.image.ImageSample;
+import jp.ac.keio.sfc.ht.memsys.ghost.image.SIFTUtil;
 import jp.ac.keio.sfc.ht.memsys.ghost.nqueen.NQueenTaskImpl;
 import jp.ac.keio.sfc.ht.memsys.ghost.nqueen.NQueenUtil;
 import jp.ac.keio.sfc.ht.memsys.ghost.commonlib.data.OffloadableData;
@@ -25,7 +27,12 @@ import jp.ac.keio.sfc.ht.memsys.ghost.commonlib.datatypes.GhostResponseTypes;
 import jp.ac.keio.sfc.ht.memsys.ghost.commonlib.requests.*;
 import jp.ac.keio.sfc.ht.memsys.ghost.commonlib.tasks.OffloadableTask;
 import jp.ac.keio.sfc.ht.memsys.ghost.commonlib.util.Util;
+import jp.ac.keio.sfc.ht.memsys.ghost.sift.FloatArray2D;
+import jp.ac.keio.sfc.ht.memsys.ghost.sift.SIFT;
+import jp.ac.keio.sfc.ht.memsys.ghost.sift.SIFTTask;
 import org.infinispan.client.hotrod.RemoteCache;
+
+import java.awt.image.BufferedImage;
 
 /**
  * Handler implementation for the object echo client.  It initiates the
@@ -42,9 +49,9 @@ public class ObjectEchoClientHandler extends ChannelInboundHandlerAdapter {
     private final GhostRequest mes;
     private String appId;
     private String taskId;
-    private final String taskName = "NQUEEN";
+    private final String taskName = "SIFT";
     private String num = "";
-    private int queenNum = 0;
+//    private int queenNum = 0;
     private long start;
     private long end;
 
@@ -53,9 +60,9 @@ public class ObjectEchoClientHandler extends ChannelInboundHandlerAdapter {
      */
     public ObjectEchoClientHandler(String n, int qn) {
         this.num = n;
-        this.queenNum = qn;
+//        this.queenNum = qn;
         Bundle bundle = new Bundle();
-        bundle.putData(BundleKeys.APP_NAME, "NQUEENAPP" + this.num);
+        bundle.putData(BundleKeys.APP_NAME, "SIFTAPP" + this.num);
         mes = new GhostRequest(GhostRequestTypes.INIT, bundle);
     }
 
@@ -83,7 +90,7 @@ public class ObjectEchoClientHandler extends ChannelInboundHandlerAdapter {
 //                System.out.println("App ID:" + appId);
 //                System.out.println("Task ID:" + taskId);
 
-                OffloadableTask task = new NQueenTaskImpl();
+                OffloadableTask task = new SIFTTask();
                 // Cache Task
                 mTaskCache.put(taskId, task);
 
@@ -96,7 +103,13 @@ public class ObjectEchoClientHandler extends ChannelInboundHandlerAdapter {
             } else if (in.REQUESTID.equals(GhostRequestTypes.REGISTERTASK)) {
                 // Cache Data
                 String seq = this.num;
-                OffloadableData data = NQueenUtil.genData(taskId, seq, this.queenNum);
+//                OffloadableData data = NQueenUtil.genData(taskId, seq, this.queenNum);
+//                String path = Util.dataPathBuilder(taskId, seq);
+//                mDataCache.put(path, data);
+
+                ImageSample imageContainer = new ImageSample();
+                BufferedImage image = imageContainer.getImage();
+                OffloadableData data = SIFTUtil.genData(taskId, seq, image);
                 String path = Util.dataPathBuilder(taskId, seq);
                 mDataCache.put(path, data);
 
@@ -139,4 +152,5 @@ public class ObjectEchoClientHandler extends ChannelInboundHandlerAdapter {
         cause.printStackTrace();
         ctx.close();
     }
+
 }

@@ -58,6 +58,7 @@ public final class ObjectEchoClient implements Runnable {
         }
     }
 
+
     public void run() {
         EventLoopGroup group = new NioEventLoopGroup();
         try {
