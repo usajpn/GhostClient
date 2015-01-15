@@ -39,6 +39,7 @@
     <orderEntry type="library" name="SBT: org.jboss.marshalling:jboss-marshalling-river:1.4.4.Final" level="project" />
     <orderEntry type="library" name="SBT: org.jboss.spec.javax.transaction:jboss-transaction-api_1.1_spec:1.0.1.Final" level="project" />
     <orderEntry type="library" name="SBT: org.jgroups:jgroups:3.4.1.Final" level="project" />
+    <orderEntry type="library" name="SBT: gov.nist.math:jama:1.0.3" level="project" />
   </component>
 </module>
 

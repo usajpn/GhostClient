@@ -28,7 +28,7 @@ import io.netty.handler.codec.serialization.ObjectEncoder;
 public final class ObjectEchoClient implements Runnable {
 
 //    static final String HOST = System.getProperty("host", "127.0.0.1");
-    static final String HOST = System.getProperty("host", "133.27.171.12");
+    static final String HOST = System.getProperty("host", "133.27.171.139");
     static final int PORT = Integer.parseInt(System.getProperty("port", "2555"));
     static final int SIZE = Integer.parseInt(System.getProperty("size", "256"));
     private String num = "";
@@ -40,15 +40,17 @@ public final class ObjectEchoClient implements Runnable {
     }
 
     public static void main(String[] args) throws Exception {
-        if (args.length != 3) {
-            System.out.println("Usage: java -jar EXECUTABLE [queenNum] [clientNum] [sleepTime]");
-            System.exit(0);
-        }
+//        if (args.length != 3) {
+//            System.out.println("Usage: java -jar EXECUTABLE [queenNum] [clientNum] [sleepTime]");
+//            System.exit(0);
+//        }
 
-        int queenNum = Integer.parseInt(args[0]);
-        int clientNum = Integer.parseInt(args[1]);
-        int sleepTime = Integer.parseInt(args[2]);
-
+//        int queenNum = Integer.parseInt(args[0]);
+//        int clientNum = Integer.parseInt(args[1]);
+//        int sleepTime = Integer.parseInt(args[2]);
+        int queenNum = 4;
+        int clientNum = 50;
+        int sleepTime = 0;
         for (int i=0; i<clientNum; i++) {
             Thread t = new Thread(new ObjectEchoClient(String.valueOf(i), queenNum));
             t.start();

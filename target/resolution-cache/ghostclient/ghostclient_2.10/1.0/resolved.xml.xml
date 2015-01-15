@@ -4,7 +4,7 @@
 		module="ghostclient_2.10"
 		revision="1.0"
 		status="integration"
-		publication="20150105103752"
+		publication="20150115202124"
 	>
 		<description>
 		GhostClient
@@ -49,6 +49,7 @@
 		<dependency org="org.jboss.marshalling" name="jboss-marshalling-river" rev="1.4.4.Final" conf="compile->default(compile)"/>
 		<dependency org="org.jboss.marshalling" name="jboss-marshalling" rev="1.4.4.Final" conf="compile->default(compile)"/>
 		<dependency org="org.jboss.logging" name="jboss-logging" rev="3.1.2.GA" conf="compile->default(compile)"/>
+		<dependency org="gov.nist.math" name="jama" rev="1.0.3" conf="compile->default(compile)"/>
 		<dependency org="net.jcip" name="jcip-annotations" rev="1.0" conf="compile->default(compile)"/>
 		<dependency org="io.netty" name="netty-all" rev="4.0.4.Final" conf="compile->default(compile)"/>
 	</dependencies>

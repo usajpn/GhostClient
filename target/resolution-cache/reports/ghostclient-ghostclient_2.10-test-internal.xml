@@ -7,15 +7,27 @@
 		revision="1.0"
 		conf="test-internal"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20150105103752"/>
+		date="20150115202124"/>
 	<dependencies>
 		<module organisation="io.netty" name="netty-all">
-			<revision name="4.0.4.Final" status="release" pubdate="20130723084829" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="12">
+			<revision name="4.0.4.Final" status="release" pubdate="20130723084829" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="13">
 				<metadata-artifact status="no" details="" size="11902" time="0" location="/Users/usa/.ivy2/cache/io.netty/netty-all/ivy-4.0.4.Final.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/io/netty/netty-all/4.0.4.Final/netty-all-4.0.4.Final.pom"/>
 				<caller organisation="ghostclient" name="ghostclient_2.10" conf="test-internal, test, optional, compile, provided, runtime" rev="4.0.4.Final" rev-constraint-default="4.0.4.Final" rev-constraint-dynamic="4.0.4.Final" callerrev="1.0"/>
 				<artifacts>
 					<artifact name="netty-all" type="jar" ext="jar" status="no" details="" size="1426508" time="0" location="/Users/usa/.ivy2/cache/io.netty/netty-all/jars/netty-all-4.0.4.Final.jar">
 						<origin-location is-local="false" location="http://repo1.maven.org/maven2/io/netty/netty-all/4.0.4.Final/netty-all-4.0.4.Final.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="gov.nist.math" name="jama">
+			<revision name="1.0.3" status="release" pubdate="20130617000433" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://math.nist.gov/javanumerics/jama/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="11">
+				<license name="Public Domain" url="http://creativecommons.org/licenses/publicdomain/"/>
+				<metadata-artifact status="no" details="" size="2612" time="0" location="/Users/usa/.ivy2/cache/gov.nist.math/jama/ivy-1.0.3.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/gov/nist/math/jama/1.0.3/jama-1.0.3.pom"/>
+				<caller organisation="ghostclient" name="ghostclient_2.10" conf="test-internal, test, optional, compile, provided, runtime" rev="1.0.3" rev-constraint-default="1.0.3" rev-constraint-dynamic="1.0.3" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="jama" type="jar" ext="jar" status="no" details="" size="37424" time="0" location="/Users/usa/.ivy2/cache/gov.nist.math/jama/jars/jama-1.0.3.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/gov/nist/math/jama/1.0.3/jama-1.0.3.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
@@ -91,7 +103,7 @@
 			</revision>
 		</module>
 		<module organisation="net.jcip" name="jcip-annotations">
-			<revision name="1.0" status="release" pubdate="20080814154805" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://jcip.net/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="11">
+			<revision name="1.0" status="release" pubdate="20080814154805" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://jcip.net/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="12">
 				<metadata-artifact status="no" details="" size="2215" time="0" location="/Users/usa/.ivy2/cache/net.jcip/jcip-annotations/ivy-1.0.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/net/jcip/jcip-annotations/1.0/jcip-annotations-1.0.pom"/>
 				<caller organisation="ghostclient" name="ghostclient_2.10" conf="test-internal, test, optional, compile, provided, runtime" rev="1.0" rev-constraint-default="1.0" rev-constraint-dynamic="1.0" callerrev="1.0"/>
 				<artifacts>

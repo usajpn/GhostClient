@@ -24,6 +24,7 @@ libraryDependencies ++= Seq(
   "org.jboss.marshalling" % "jboss-marshalling-river" % "1.4.4.Final",
   "org.jboss.marshalling" % "jboss-marshalling" % "1.4.4.Final",
   "org.jboss.logging" % "jboss-logging" % "3.1.2.GA",
+  "gov.nist.math"%"jama"%"1.0.3",
   "net.jcip" % "jcip-annotations" % "1.0",
   "io.netty" % "netty-all" % "4.0.4.Final"
 )
