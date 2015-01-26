@@ -15,12 +15,12 @@ public class ImageSample {
 
     private final BufferedImage mBufferedImage;
 
-    public ImageSample(){
+    public ImageSample(String size){
 
         BufferedImage readImage = null;
 
         try {
-            readImage = ImageIO.read(new File("/Users/usa/sample.jpeg"));
+            readImage = ImageIO.read(new File("./img/sample_" + size + ".jpeg"));
         } catch (Exception e) {
             e.printStackTrace();
             readImage = null;
@@ -29,9 +29,9 @@ public class ImageSample {
         mBufferedImage = readImage;
     }
 
-    public ImageSample(BufferedImage bi) {
-        mBufferedImage = bi;
-    }
+//    public ImageSample(BufferedImage bi) {
+//        mBufferedImage = bi;
+//    }
 
     public BufferedImage getImage(){
         return mBufferedImage;

@@ -25,35 +25,52 @@ import io.netty.handler.codec.serialization.ClassResolvers;
 import io.netty.handler.codec.serialization.ObjectDecoder;
 import io.netty.handler.codec.serialization.ObjectEncoder;
 
-public final class ObjectEchoClient implements Runnable {
+import java.net.InetAddress;
+import java.util.concurrent.atomic.AtomicInteger;
 
-//    static final String HOST = System.getProperty("host", "127.0.0.1");
+public final class ObjectEchoClient {
+
+//    static final String HOST = System.getProperty("host", "133.27.171.11");
     static final String HOST = System.getProperty("host", "133.27.171.139");
     static final int PORT = Integer.parseInt(System.getProperty("port", "2555"));
     static final int SIZE = Integer.parseInt(System.getProperty("size", "256"));
+    private String ID;
 
-    public static void main(String[] args) throws Exception {
-//        if (args.length != 3) {
-//            System.out.println("Usage: java -jar EXECUTABLE [queenNum] [clientNum] [sleepTime]");
-//            System.exit(0);
-//        }
-
-//        int queenNum = Integer.parseInt(args[0]);
-//        int clientNum = Integer.parseInt(args[1]);
-//        int sleepTime = Integer.parseInt(args[2]);
-//        int queenNum = 4;
-//        int clientNum = 50;
-        int clientNum = 1;
-        int sleepTime = 0;
-        for (int i=0; i<clientNum; i++) {
-            Thread t = new Thread(new ObjectEchoClient());
-            t.start();
-            Thread.sleep(sleepTime);
-        }
+    public ObjectEchoClient(String ID, String fn) {
     }
 
+    public static void main(String[] args) throws Exception {
+        if (args.length != 3) {
+            System.out.println("Usage: java -jar EXECUTABLE [expNum] [clientNum] [size]");
+            System.exit(0);
+        }
 
-    public void run() {
+        String ipAddr = InetAddress.getLocalHost().getHostAddress();
+        String[] splitIP = ipAddr.split("\\.");
+        String tailIP = splitIP[3];
+
+        final String ID = String.valueOf((Integer.parseInt(tailIP) - 9));
+
+//        System.out.println(ID);
+
+        String expName = args[0];
+        String clientNum = args[1];
+        final String imageSize = args[2];
+
+        final String fileName = expName + "/" + clientNum + "hosts/" + ipAddr;
+        final long time = System.currentTimeMillis();
+
+
+////        for (int i=0; i<Integer.valueOf(clientNum); i++) {
+//        Thread t = new Thread(new ObjectEchoClient(ID, fn));
+//        t.start();
+////        ID = ID + 100;
+////        }
+//    }
+//
+//
+//    public void run() {
+        final AtomicInteger counter = new AtomicInteger();
         EventLoopGroup group = new NioEventLoopGroup();
         try {
             Bootstrap b = new Bootstrap();
@@ -66,7 +83,7 @@ public final class ObjectEchoClient implements Runnable {
                             p.addLast(
                                     new ObjectEncoder(),
                                     new ObjectDecoder(ClassResolvers.cacheDisabled(null)),
-                                    new ObjectEchoClientHandler());
+                                    new ObjectEchoClientHandler(ID, counter, fileName, imageSize, time));
                         }
                     });
 
