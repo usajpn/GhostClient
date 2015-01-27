@@ -182,50 +182,58 @@ public class ObjectEchoClientHandler extends ChannelInboundHandlerAdapter {
 
             } else if (in.REQUESTID.equals(GhostRequestTypes.EXECUTE)) {
                 counter.getAndDecrement();
-//                System.out.println(counter.get());
                 octNum = octNum - 1;
                 final String resultSeq = in.MESSAGE.getData(BundleKeys.DATA_SEQ);
                 System.out.println(resultSeq);
+                while(mResultCache.get(Util.dataPathBuilder(taskId, resultSeq)) == null) {
+                    Thread.sleep(10);
+                }
 
-                final NotifyingFuture f = mResultCache.getAsync(Util.dataPathBuilder(taskId, resultSeq));
+                OffloadableData feature = mResultCache.get(Util.dataPathBuilder(taskId, resultSeq));
+                features.addAll((Vector<Feature>)feature.getData("FEATURE"));
+                if (counter.get() == 0) {
+                    end = System.currentTimeMillis();
+                    System.out.println("TIME: " + (end - start));
+                    ctx.close();
+                }
 
-                Thread t = new Thread(new Runnable() {
+//                final NotifyingFuture f = mResultCache.getAsync(Util.dataPathBuilder(taskId, resultSeq));
+                /*
+                f.attachListener(new FutureListener<OffloadableData>() {
                     @Override
-                    public void run() {
-                        f.attachListener(new FutureListener<OffloadableData>() {
-                            @Override
-                            public void futureDone(Future<OffloadableData> future) {
-                                System.out.println("OK!!!");
+                    public void futureDone(Future<OffloadableData> future) {
+                        try {
+                            System.out.println("hoge");
+                            System.out.println((OffloadableData)future.get());
+                            features.addAll((Vector<Feature>) future.get().getData("FEATURE"));
+                        } catch (InterruptedException e) {
+                            System.out.println(e.getMessage());
+                            e.printStackTrace();
+                        } catch (ExecutionException e) {
+                            System.out.println(e.getMessage());
+                            e.printStackTrace();
+                        }
 
-                                try {
-                                    features.addAll((Vector<Feature>) future.get().getData("FEATURE"));
-                                } catch (InterruptedException e) {
-                                    e.printStackTrace();
-                                } catch (ExecutionException e) {
-                                    e.printStackTrace();
-                                }
-
-                                if (counter.get() == 0) {
-                                    end = System.currentTimeMillis();
-                                    //                  System.out.println(start - time);
-                                    System.out.println((end - start));
-                                    //                   imageContainer.showImage(features);
-                                    try {
-                                        File file = new File(fileName);
-                                        FileWriter filewriter = new FileWriter(file, true);
-                                        filewriter.write(String.valueOf(end - time) + "\n");
-                                        filewriter.close();
-                                    } catch (Exception e) {
-                                        System.out.println(e);
-                                    }
-
-                                }
+                        if (counter.get() == 0) {
+                            end = System.currentTimeMillis();
+                            //                  System.out.println(start - time);
+                            System.out.println((end - start));
+                            //                   imageContainer.showImage(features);
+                            try {
+                                File file = new File(fileName);
+                                FileWriter filewriter = new FileWriter(file, true);
+                                filewriter.write(String.valueOf(end - time) + "\n");
+                                filewriter.close();
+                            } catch (Exception e) {
+                                System.out.println(e);
                             }
-                        });
+                            System.exit(0);
+
+                        }
                     }
                 });
-                t.start();
-
+                */
+//                ctx.flush();
 
 //                OffloadableData feature = mResultCache.getAsync(Util.dataPathBuilder(taskId, resultSeq)).get();
 //                features.addAll((Vector<Feature>) feature.getData("FEATURE"));
