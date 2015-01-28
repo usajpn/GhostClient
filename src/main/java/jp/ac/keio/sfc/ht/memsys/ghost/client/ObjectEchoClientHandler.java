@@ -154,7 +154,6 @@ public class ObjectEchoClientHandler extends ChannelInboundHandlerAdapter {
                             FloatArray2DScaleOctave octave = sift.getOctave(oct);
                             //                    System.out.println(octave.build());
                             data.putData("OCTAVE", octave);
-
                             data.putData("SEQ", seq);
                             //                    System.out.println(data.getData("OCTAVE"));
                             String path = Util.dataPathBuilder(taskId, seq);
@@ -166,7 +165,7 @@ public class ObjectEchoClientHandler extends ChannelInboundHandlerAdapter {
                     });
                 }
                 es.shutdown();
-                boolean finshed = es.awaitTermination(10, TimeUnit.SECONDS);
+                boolean finished = es.awaitTermination(10, TimeUnit.SECONDS);
 
                 for (int o=0; o<octNum; o++) {
                     String seq = String.valueOf(o);
@@ -182,6 +181,9 @@ public class ObjectEchoClientHandler extends ChannelInboundHandlerAdapter {
 
             } else if (in.REQUESTID.equals(GhostRequestTypes.EXECUTE)) {
                 counter.getAndDecrement();
+                if (counter.get() == 0) {
+                    ctx.close();
+                }
                 octNum = octNum - 1;
                 final String resultSeq = in.MESSAGE.getData(BundleKeys.DATA_SEQ);
                 System.out.println(resultSeq);
@@ -194,6 +196,15 @@ public class ObjectEchoClientHandler extends ChannelInboundHandlerAdapter {
                 if (counter.get() == 0) {
                     end = System.currentTimeMillis();
                     System.out.println("TIME: " + (end - start));
+
+                    try {
+                        File file = new File(fileName);
+                        FileWriter filewriter = new FileWriter(file, true);
+                        filewriter.write(String.valueOf(end - time) + "\n");
+                        filewriter.close();
+                    } catch (Exception e) {
+                        System.out.println(e);
+                    }
                     ctx.close();
                 }
 

@@ -36,8 +36,8 @@
       <file leaf-file-name="ObjectEchoClient.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/client/ObjectEchoClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1006" max-vertical-offset="1515">
-              <caret line="81" column="23" selection-start-line="81" selection-start-column="23" selection-end-line="81" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="945" max-vertical-offset="1515">
+              <caret line="33" column="72" selection-start-line="33" selection-start-column="72" selection-end-line="33" selection-end-column="72" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -48,15 +48,15 @@
       <file leaf-file-name="ObjectEchoClientHandler.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/client/ObjectEchoClientHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.2396857" vertical-offset="3601" max-vertical-offset="4110">
-              <caret line="198" column="0" selection-start-line="198" selection-start-column="0" selection-end-line="198" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.17485265" vertical-offset="2086" max-vertical-offset="4275">
+              <caret line="145" column="0" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2922#2931#0" expanded="true" />
-                <element signature="e#6157#7272#0" expanded="true" />
-                <element signature="e#7249#7250#0" expanded="true" />
-                <element signature="e#11339#11340#0" expanded="true" />
-                <element signature="e#11366#11367#0" expanded="true" />
+                <element signature="e#6157#7271#0" expanded="true" />
+                <element signature="e#7248#7249#0" expanded="true" />
+                <element signature="e#11825#11826#0" expanded="true" />
+                <element signature="e#11852#11853#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -497,10 +497,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="ghost" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="image" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1007,10 +1003,10 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2922#2931#0" expanded="true" />
-            <element signature="e#6157#7272#0" expanded="true" />
-            <element signature="e#7249#7250#0" expanded="true" />
-            <element signature="e#11339#11340#0" expanded="true" />
-            <element signature="e#11366#11367#0" expanded="true" />
+            <element signature="e#6157#7271#0" expanded="true" />
+            <element signature="e#7248#7249#0" expanded="true" />
+            <element signature="e#11825#11826#0" expanded="true" />
+            <element signature="e#11852#11853#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1094,10 +1090,10 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2922#2931#0" expanded="true" />
-            <element signature="e#6157#7272#0" expanded="true" />
-            <element signature="e#7249#7250#0" expanded="true" />
-            <element signature="e#11339#11340#0" expanded="true" />
-            <element signature="e#11366#11367#0" expanded="true" />
+            <element signature="e#6157#7271#0" expanded="true" />
+            <element signature="e#7248#7249#0" expanded="true" />
+            <element signature="e#11825#11826#0" expanded="true" />
+            <element signature="e#11852#11853#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1351,8 +1347,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/client/ObjectEchoClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1006" max-vertical-offset="1515">
-          <caret line="81" column="23" selection-start-line="81" selection-start-column="23" selection-end-line="81" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="945" max-vertical-offset="1515">
+          <caret line="33" column="72" selection-start-line="33" selection-start-column="72" selection-end-line="33" selection-end-column="72" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1361,15 +1357,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/jp/ac/keio/sfc/ht/memsys/ghost/client/ObjectEchoClientHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.2396857" vertical-offset="3601" max-vertical-offset="4110">
-          <caret line="198" column="0" selection-start-line="198" selection-start-column="0" selection-end-line="198" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.17485265" vertical-offset="2086" max-vertical-offset="4275">
+          <caret line="145" column="0" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2922#2931#0" expanded="true" />
-            <element signature="e#6157#7272#0" expanded="true" />
-            <element signature="e#7249#7250#0" expanded="true" />
-            <element signature="e#11339#11340#0" expanded="true" />
-            <element signature="e#11366#11367#0" expanded="true" />
+            <element signature="e#6157#7271#0" expanded="true" />
+            <element signature="e#7248#7249#0" expanded="true" />
+            <element signature="e#11825#11826#0" expanded="true" />
+            <element signature="e#11852#11853#0" expanded="true" />
           </folding>
         </state>
       </provider>

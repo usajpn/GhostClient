@@ -30,8 +30,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public final class ObjectEchoClient {
 
-//    static final String HOST = System.getProperty("host", "133.27.171.11");
-    static final String HOST = System.getProperty("host", "133.27.171.139");
+    static final String HOST = System.getProperty("host", "133.27.171.11");
+//    static final String HOST = System.getProperty("host", "133.27.171.139");
     static final int PORT = Integer.parseInt(System.getProperty("port", "2555"));
     static final int SIZE = Integer.parseInt(System.getProperty("size", "256"));
     private String ID;
@@ -57,7 +57,7 @@ public final class ObjectEchoClient {
         String clientNum = args[1];
         final String imageSize = args[2];
 
-        final String fileName = expName + "/" + clientNum + "hosts/" + ipAddr;
+        final String fileName = "data/" + expName + "/" + clientNum + "hosts/" + ipAddr;
         final long time = System.currentTimeMillis();
 
 
